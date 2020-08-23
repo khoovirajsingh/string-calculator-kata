@@ -9,6 +9,10 @@
 
 (defn add [numbers]
   (if (empty? numbers) 0
-    (reduce + (map #(Integer/parseInt %) (parse-numbers numbers)))))
+    (->> numbers
+         (parse-numbers)
+         (map #(Integer/parseInt %))
+         (reduce +))))
+
 
 
