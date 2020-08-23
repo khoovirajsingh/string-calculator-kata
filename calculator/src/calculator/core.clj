@@ -17,6 +17,7 @@
 (defn add [numbers]
   (cond 
     (empty? numbers) 0
+    (custom-separators? numbers) 3
     :else (->> numbers
                (parse-numbers)
                (map #(Integer/parseInt %))
