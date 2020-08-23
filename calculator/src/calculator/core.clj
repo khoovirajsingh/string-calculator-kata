@@ -4,8 +4,9 @@
 
 
 (defn parse-numbers [numbers]
-  (str/split numbers #","))
+  (mapcat #(str/split % #"\n") (str/split numbers #",")))
   
+
 
 (defn add [numbers]
   (if (empty? numbers) 0
