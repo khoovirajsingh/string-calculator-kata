@@ -15,10 +15,11 @@
     {:separators separator :numbers (str/join numbers)}))
 
 (defn add [numbers]
-  (if (empty? numbers) 0
-    (->> numbers
-         (parse-numbers)
-         (map #(Integer/parseInt %))
-         (reduce +))))
+  (cond 
+    (empty? numbers) 0
+    :else (->> numbers
+               (parse-numbers)
+               (map #(Integer/parseInt %))
+               (reduce +))))
 
 
