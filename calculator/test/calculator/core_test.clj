@@ -2,11 +2,9 @@
   (:require [clojure.test :refer :all]
             [calculator.core :refer :all]))
 
-(deftest adding-empty-string-returns-zero
-    (is (= 0 (add ""))))
-
-(deftest adding-a-string-number-returns-number
-    (is (= 1 (add "1"))))
-
-(deftest adding-2-string-numbers-separated-by-comma-returns-sum-of-numbers
-    (is (= 3 (add "1,2"))))
+(deftest add-string-numbers
+  (are [x] (= x)
+    0 (add "")
+    1 (add "1")
+    3 (add "1,2")
+    45 (add "1,2,3,4,5,6,7,8,9")))
