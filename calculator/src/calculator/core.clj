@@ -2,4 +2,7 @@
   (:gen-class))
 
 (defn add [numbers]
-  0)
+  (if (empty? numbers) 0
+    (Integer/parseInt numbers)))
+
+
